@@ -1,5 +1,6 @@
 import telebot
-import json, os
+import json
+import os
 from telebot import types
 
 token = os.environ.get('BOT_TOKEN')
