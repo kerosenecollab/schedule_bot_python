@@ -4,7 +4,7 @@ from flask import Flask
 from telebot import types
 
 
-bot = telebot.TeleBot('BOT_TOKEN')
+bot = telebot.TeleBot(BOT_TOKEN)
 
 
 app = Flask(__name__)
