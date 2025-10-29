@@ -1,10 +1,17 @@
 import telebot
-import json
-import os
+import json, os
+from flask import Flask
 from telebot import types
 
-token = os.environ.get('BOT_TOKEN')
+token = '8308403784:AAH7Tmefg9RgseYd3CWrvbWdOxYBts1UgrI'
 bot = telebot.TeleBot(token)
+
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return 'bot activate'
 
 
 
@@ -40,8 +47,26 @@ def days(call):
         text += f"{lesson['subject']} в {lesson['time']} - {lesson['class']}\n"
     bot.send_message(call.message.chat.id, text)
     
+if __name__ == "__main__":
+
+    from threading import Thread
+    Thread(target=lambda: app.run(host='0.0.0.0', port=8080, debug=False, use_reloader=False)).start()
+    
+    print("🤖 Бот запускается...")
+
+
 
 bot.polling(none_stop=True)
+
+
+
+
+
+
+
+
+
+
 
 
 
