@@ -13,6 +13,10 @@ app = Flask(__name__)
 def home():
     return 'bot activate'
 
+@app.route('/help')
+def help():
+    return 'good', 200
+
 
 
 @bot.message_handler(commands=['start'])
