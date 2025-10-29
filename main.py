@@ -59,9 +59,11 @@ if __name__ == "__main__":
     print("🤖 Бот запускается...")
 
 
-
-bot.polling(none_stop=True)
-
+bot.polling(
+    none_stop=True,
+    interval=0,
+    allowed_updates=['message', 'callback_query']  
+)
 
 
 
