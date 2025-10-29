@@ -3,7 +3,7 @@ import json, os
 from flask import Flask
 from telebot import types
 
-token = BOT_TOKEN
+token = os.environ.get(BOT_TOKEN)
 bot = telebot.TeleBot(token)
 
 
